@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: WizardWebb Questions / Discussions
+    url: https://github.com/MichaelWave369/WizardWebb/discussions
+    about: Ask questions, share ideas, and talk noir web tools.
+  - name: Security concerns
+    url: https://github.com/MichaelWave369/WizardWebb/security/policy
+    about: Please avoid posting sensitive security details publicly.
