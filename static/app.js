@@ -98,6 +98,21 @@ window.addEventListener("DOMContentLoaded", () => {
   const categories = window.__CATEGORIES__ || [];
   const chips = $("#chips");
 
+  window.addEventListener("mousemove", (e) => {
+    document.documentElement.style.setProperty("--mx", e.clientX + "px");
+    document.documentElement.style.setProperty("--my", e.clientY + "px");
+  });
+
+  window.addEventListener("keydown", (e) => {
+    const isCtrlK = (e.ctrlKey || e.metaKey) && e.key.toLowerCase() === "k";
+    const isSlash = e.key === "/" && !e.ctrlKey && !e.metaKey && !e.altKey;
+    if(isCtrlK || isSlash){
+      e.preventDefault();
+      const q = document.getElementById("q");
+      if(q) q.focus();
+    }
+  });
+
   const state = {
     query: "",
     category: "All",

@@ -1,0 +1,167 @@
+name: Validate links.yml
+
+on:
+  pull_request:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install deps
+        run: |
+          python -m pip install --upgrade pip
+          pip install pyyaml requests
+
+      - name: Validate YAML structure
+        run: |
+          python - << "PY"
+          import yaml, sys
+          from pathlib import Path
+
+          p = Path("data/links.yml")
+          data = yaml.safe_load(p.read_text(encoding="utf-8"))
+
+          if not isinstance(data, list):
+            print("ERROR: data/links.yml must be a YAML list")
+            sys.exit(1)
+
+          required = ["name","category","status"]
+          seen_ids = set()
+          dup_ids = []
+          missing = 0
+
+          for i, item in enumerate(data):
+            if not isinstance(item, dict):
+              print(f"ERROR: item #{i+1} is not a mapping/object")
+              sys.exit(1)
+
+            for k in required:
+              if not item.get(k):
+                print(f"ERROR: item #{i+1} missing required field: {k}")
+                missing += 1
+
+            _id = item.get("id")
+            if _id:
+              if _id in seen_ids:
+                dup_ids.append(_id)
+              seen_ids.add(_id)
+
+            status = str(item.get("status","")).lower()
+            if status not in ("ok","caution","omitted"):
+              print(f"ERROR: item #{i+1} has invalid status: {status}")
+              missing += 1
+
+          if dup_ids:
+            print("ERROR: duplicate ids found:", ", ".join(sorted(set(dup_ids))))
+            sys.exit(1)
+
+          if missing:
+            sys.exit(1)
+
+          print(f"OK: {len(data)} items validated")
+          PY
+
+      - name: Best-effort URL checks (fail only on broken links)
+        run: |
+          python - << "PY"
+          import re, sys, time
+          from urllib.parse import urlparse
+
+          import yaml
+          import requests
+          from requests.exceptions import RequestException
+
+          SOFT_CODES = {401, 403, 429}      # bot blocks / auth / rate limits
+          HARD_CODES = {404, 410}           # likely truly broken
+          URL_RE = re.compile(r"^https?://", re.I)
+
+          with open("data/links.yml", "r", encoding="utf-8") as f:
+            data = yaml.safe_load(f) or []
+
+          session = requests.Session()
+          # More browser-like headers helps a bit, but many sites still 403 on runners.
+          session.headers.update({
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123 Safari/537.36",
+            "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+            "Accept-Language": "en-US,en;q=0.9",
+          })
+
+          bad = []
+          warn = []
+          ok = 0
+          checked = 0
+
+          def normalize(url: str) -> str:
+            return str(url).strip()
+
+          for item in data:
+            url = item.get("url")
+            name = item.get("name", "(unnamed)")
+            if not url:
+              continue
+
+            url = normalize(url)
+
+            # Format validation (hard fail)
+            if not URL_RE.match(url):
+              bad.append((name, url, "format"))
+              continue
+
+            # Basic parse sanity (hard fail)
+            p = urlparse(url)
+            if not p.netloc:
+              bad.append((name, url, "missing host"))
+              continue
+
+            checked += 1
+
+            # Try GET (HEAD is often blocked). Allow redirects.
+            try:
+              # Small retry for 429
+              for attempt in range(2):
+                r = session.get(url, allow_redirects=True, timeout=12)
+                code = r.status_code
+                if code == 429 and attempt == 0:
+                  time.sleep(2)
+                  continue
+                break
+
+              if 200 <= code < 400:
+                ok += 1
+              elif code in HARD_CODES:
+                bad.append((name, url, f"status {code}"))
+              elif code in SOFT_CODES or code >= 500:
+                warn.append((name, url, f"status {code}"))
+              else:
+                # Anything else: warn (don’t break CI for weird edge cases)
+                warn.append((name, url, f"status {code}"))
+
+            except RequestException as e:
+              # Network/DNS flakiness happens on runners; warn only.
+              warn.append((name, url, f"error {type(e).__name__}"))
+
+          print(f"Checked: {checked} | OK: {ok} | Warn: {len(warn)} | Bad: {len(bad)}")
+
+          if warn:
+            print("\nWARN (non-fatal):")
+            for n,u,why in warn[:50]:
+              print(f" - {n}: {u} -> {why}")
+            if len(warn) > 50:
+              print(f" ... and {len(warn)-50} more warnings")
+
+          if bad:
+            print("\nBAD (fatal):")
+            for n,u,why in bad:
+              print(f" - {n}: {u} -> {why}")
+            sys.exit(1)
+
+          PY
