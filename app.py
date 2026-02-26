@@ -85,5 +85,8 @@ def create_app() -> Flask:
 app = create_app()
 
 if __name__ == "__main__":
-    port = int(os.environ.get("PORT", "8000"))
-    app.run(host="0.0.0.0", port=port, debug=True)
+    if os.environ.get("STREAMLIT_SERVER_PORT") or os.environ.get("STREAMLIT_SERVER_HEADLESS"):
+        print("Detected Streamlit runtime; not starting Flask server. Use streamlit_app.py instead.")
+    else:
+        port = int(os.environ.get("PORT", "8000"))
+        app.run(host="0.0.0.0", port=port, debug=False)
