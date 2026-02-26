@@ -30,6 +30,20 @@ python app.py
 
 (macOS/Linux: `export LINKS_FILE=/path/to/my_links.yml`)
 
+
+## Run on Streamlit
+
+```bash
+streamlit run streamlit_app.py
+```
+
+Streamlit Cloud entrypoint should be `streamlit_app.py`.
+
+
+## Streamlit Cloud
+
+Set the Streamlit “Main file” to: `streamlit_app.py`
+
 ## Deploy notes
 
 This app listens on `PORT` when set (common on Railway/Render/Fly/etc).

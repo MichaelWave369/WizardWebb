@@ -85,5 +85,14 @@ def create_app() -> Flask:
 app = create_app()
 
 if __name__ == "__main__":
-    port = int(os.environ.get("PORT", "8000"))
-    app.run(host="0.0.0.0", port=port, debug=True)
+    if os.environ.get("STREAMLIT_SERVER_PORT") or os.environ.get("STREAMLIT_SERVER_HEADLESS"):
+        try:
+            import streamlit as st
+            st.set_page_config(page_title="WizardWebb")
+            st.error("This file is the Flask app. On Streamlit Cloud set the main file to streamlit_app.py.")
+            st.stop()
+        except Exception:
+            print("Streamlit detected. Set the main file to streamlit_app.py.")
+    else:
+        port = int(os.environ.get("PORT", "8000"))
+        app.run(host="0.0.0.0", port=port, debug=False, use_reloader=False)
