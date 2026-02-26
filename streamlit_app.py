@@ -35,8 +35,7 @@ def load_links(path: str) -> List[Dict[str, Any]]:
 def categories(links: List[Dict[str, Any]]) -> List[str]:
     cats = sorted({(l.get("category") or "Other") for l in links})
     preferred = ["Search", "Research", "OSINT", "Security & Privacy", "Web Tools", "Freebies & Deals", "Other"]
-    ordered = [c for c in preferred if c in cats] + [c for c in cats if c not in preferred]
-    return ordered
+    return [c for c in preferred if c in cats] + [c for c in cats if c not in preferred]
 
 def esc(s: str) -> str:
     return html.escape(str(s or ""))
@@ -54,7 +53,6 @@ st.set_page_config(page_title=APP_NAME, page_icon="🕵️", layout="wide")
 # Noir CSS
 st.markdown("""
 <style>
-:root{ --mx:50vw; --my:20vh; }
 .stApp{
   background:
     radial-gradient(1200px 700px at 70% -10%, rgba(68,217,255,.12), transparent 55%),
@@ -80,8 +78,6 @@ st.markdown("""
   box-shadow:0 14px 40px rgba(68,217,255,.12);
   border:1px solid rgba(255,255,255,.10);
 }
-.noir-title{ margin:0; font-size:16px; letter-spacing:.6px; }
-.noir-sub{ margin-top:2px; color:#aab3c2; font-size:12px; }
 .pill{
   display:inline-flex; align-items:center; gap:8px;
   border:1px solid rgba(238,242,247,.10);
@@ -134,14 +130,13 @@ st.markdown("""
 links = load_links(str(LINKS_FILE))
 cats = ["All"] + categories(links)
 
-# Header
 st.markdown(f"""
 <div class="noir-top">
   <div class="noir-brand">
     <div class="noir-logo"></div>
     <div>
-      <div class="noir-title">{APP_NAME}</div>
-      <div class="noir-sub">Noir directory of web tools • search • filter • save time</div>
+      <div style="margin:0;font-size:16px;letter-spacing:.6px;">{APP_NAME}</div>
+      <div style="margin-top:2px;color:#aab3c2;font-size:12px;">Noir directory of web tools • search • filter • save time</div>
     </div>
   </div>
   <div style="display:flex; gap:10px; flex-wrap:wrap;">
@@ -151,11 +146,11 @@ st.markdown(f"""
 """, unsafe_allow_html=True)
 
 st.write("")
-col1, col2, col3, col4 = st.columns([3, 2, 1.3, 1])
-q = col1.text_input("Search", placeholder="Search (name, description, tags)...")
-cat = col2.selectbox("Category", options=cats, index=0)
-show_unlinked = col3.toggle("Show unlinked", value=True)
-clear = col4.button("Clear")
+c1, c2, c3, c4 = st.columns([3, 2, 1.3, 1])
+q = c1.text_input("Search", placeholder="Search (name, description, tags)...")
+cat = c2.selectbox("Category", options=cats, index=0)
+show_unlinked = c3.toggle("Show unlinked", value=True)
+clear = c4.button("Clear")
 
 if clear:
     st.session_state.clear()
@@ -180,7 +175,6 @@ def match(it: Dict[str, Any]) -> bool:
 filtered = [it for it in links if match(it)]
 st.caption(f"{len(filtered)} shown / {len(links)} total  •  Source: {LINKS_FILE}")
 
-# Render cards (2 columns)
 for i in range(0, len(filtered), 2):
     cols = st.columns(2)
     for j in range(2):
