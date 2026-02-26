@@ -641,3 +641,245 @@
   category: Security & Privacy
   tags: [android, foss, apps]
   status: ok
+
+# --- WizardWebb Noir Pack #2 (maps • archives • open data • dev utilities) ---
+
+# Maps / Geo / Visual intel
+- id: openstreetmap
+  name: OpenStreetMap
+  url: https://www.openstreetmap.org/
+  description: Open world map you can explore, edit, and use as a base layer.
+  category: Web Tools
+  tags: [maps, geo, open-data]
+  status: ok
+
+- id: overpass_turbo
+  name: Overpass Turbo
+  url: https://overpass-turbo.eu/
+  description: Query/filter OpenStreetMap data and visualize results on a map.
+  category: Web Tools
+  tags: [maps, geo, openstreetmap, query]
+  status: ok
+
+- id: nominatim_docs
+  name: Nominatim (OSM Geocoding Docs)
+  url: https://nominatim.org/
+  description: Open-source geocoding and reverse-geocoding using OpenStreetMap data.
+  category: Web Tools
+  tags: [maps, geocoding, api, openstreetmap]
+  status: ok
+
+- id: geojson_io
+  name: geojson.io
+  url: https://geojson.io/
+  description: Quick map editor/viewer for GeoJSON (draw, import, export).
+  category: Web Tools
+  tags: [maps, geojson, editor]
+  status: ok
+
+- id: mapshaper
+  name: Mapshaper
+  url: https://mapshaper.org/
+  description: Clean/simplify/convert shapefiles and GeoJSON in your browser.
+  category: Web Tools
+  tags: [maps, gis, convert]
+  status: ok
+
+- id: google_earth
+  name: Google Earth (Web)
+  url: https://earth.google.com/web/
+  description: Explore satellite imagery and 3D terrain in the browser.
+  category: Web Tools
+  tags: [maps, satellite, 3d]
+  status: ok
+
+# Archives / Link-rot armor
+- id: internet_archive
+  name: Internet Archive
+  url: https://archive.org/
+  description: Library of archived sites, books, audio, video, and software.
+  category: Web Tools
+  tags: [archive, library]
+  status: ok
+
+- id: memento_timetravel
+  name: Memento Time Travel
+  url: https://timetravel.mementoweb.org/
+  description: Check many web archives at once for snapshots of a URL.
+  category: Web Tools
+  tags: [archive, snapshots, history]
+  status: ok
+
+- id: openlibrary
+  name: Open Library
+  url: https://openlibrary.org/
+  description: Open catalog of books (borrow where available).
+  category: Research
+  tags: [books, library, catalog]
+  status: ok
+
+# Open data / world facts
+- id: wikidata
+  name: Wikidata
+  url: https://www.wikidata.org/
+  description: Community knowledge base; structured data behind many projects.
+  category: Research
+  tags: [open-data, knowledge-graph]
+  status: ok
+
+- id: wikidata_query
+  name: Wikidata Query Service
+  url: https://query.wikidata.org/
+  description: Run SPARQL queries over Wikidata and export results.
+  category: Research
+  tags: [sparql, knowledge-graph, open-data]
+  status: ok
+
+- id: data_gov
+  name: Data.gov
+  url: https://data.gov/
+  description: US government open data portal (datasets, APIs, resources).
+  category: Research
+  tags: [open-data, government]
+  status: ok
+
+- id: eu_open_data
+  name: EU Open Data Portal
+  url: https://data.europa.eu/en
+  description: European open data portal with datasets and catalogs.
+  category: Research
+  tags: [open-data, government, europe]
+  status: ok
+
+- id: world_bank_data
+  name: World Bank Data
+  url: https://data.worldbank.org/
+  description: Global development indicators and downloadable datasets.
+  category: Research
+  tags: [economics, indicators, datasets]
+  status: ok
+
+- id: our_world_in_data
+  name: Our World in Data
+  url: https://ourworldindata.org/
+  description: Data-driven charts and research on global topics.
+  category: Research
+  tags: [charts, datasets, public-health]
+  status: ok
+
+- id: gdelt
+  name: GDELT
+  url: https://www.gdeltproject.org/
+  description: Global news/events data with search and analysis tools.
+  category: Research
+  tags: [news, datasets, analysis]
+  status: ok
+
+- id: common_crawl
+  name: Common Crawl
+  url: https://commoncrawl.org/
+  description: Open web crawl datasets for research and analysis.
+  category: Research
+  tags: [web, datasets, crawl]
+  status: ok
+
+# Dev / format / utility belt
+- id: cyberchef
+  name: CyberChef
+  url: https://gchq.github.io/CyberChef/
+  description: Encode/decode, parse, convert, and analyze data in-browser.
+  category: Web Tools
+  tags: [convert, decode, encode, tools]
+  status: ok
+
+- id: regex101
+  name: regex101
+  url: https://regex101.com/
+  description: Build/test regex with explanations and match highlighting.
+  category: Web Tools
+  tags: [regex, dev]
+  status: ok
+
+- id: jsonlint
+  name: JSONLint
+  url: https://jsonlint.com/
+  description: Validate and format JSON.
+  category: Web Tools
+  tags: [json, formatter, dev]
+  status: ok
+
+- id: base64_guru
+  name: Base64.guru
+  url: https://base64.guru/
+  description: Base64 tools + guides (encode/decode and related utilities).
+  category: Web Tools
+  tags: [base64, convert]
+  status: ok
+
+- id: diffchecker
+  name: Diffchecker
+  url: https://www.diffchecker.com/
+  description: Compare text/files quickly (useful for configs and edits).
+  category: Web Tools
+  tags: [diff, compare, dev]
+  status: ok
+
+- id: crontab_guru
+  name: crontab.guru
+  url: https://crontab.guru/
+  description: Cron schedule helper (at 2am every Sunday, etc.).
+  category: Web Tools
+  tags: [cron, devops]
+  status: ok
+
+- id: caniuse
+  name: Can I use
+  url: https://caniuse.com/
+  description: Browser support tables for web features.
+  category: Web Tools
+  tags: [webdev, compatibility]
+  status: ok
+
+- id: mermaid_live
+  name: Mermaid Live Editor
+  url: https://mermaid.live/
+  description: Make diagrams from text (flowcharts, sequence diagrams, etc.).
+  category: Web Tools
+  tags: [diagrams, docs]
+  status: ok
+
+- id: excalidraw
+  name: Excalidraw
+  url: https://excalidraw.com/
+  description: Sketchy whiteboard for fast diagrams and UI flows.
+  category: Web Tools
+  tags: [whiteboard, diagrams]
+  status: ok
+
+# Safety / privacy quick hits
+- id: twofa_directory
+  name: 2FA Directory
+  url: https://2fa.directory/
+  description: Which services support 2FA / MFA (and how).
+  category: Security & Privacy
+  tags: [2fa, mfa, security]
+  status: ok
+
+# urlscan already exists earlier in the file; keeping this pack additive without duplicating IDs.
+
+# Freebies / help finders (clean + legit)
+- id: findhelp
+  name: Findhelp
+  url: https://www.findhelp.org/
+  description: Find free or reduced-cost services by ZIP code (food, housing, etc.).
+  category: Freebies & Deals
+  tags: [help, resources, local]
+  status: ok
+
+- id: "211"
+  name: 211 (United Way)
+  url: https://www.211.org/
+  description: Local assistance directory (food, shelter, utilities, support).
+  category: Freebies & Deals
+  tags: [help, resources, local]
+  status: ok
