@@ -1,0 +1,117 @@
+name: Validate links.yml
+
+on:
+  pull_request:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install deps
+        run: |
+          python -m pip install --upgrade pip
+          pip install pyyaml requests
+
+      - name: Validate YAML structure
+        run: |
+          python - << "PY"
+          import yaml, sys
+          from pathlib import Path
+
+          p = Path("data/links.yml")
+          data = yaml.safe_load(p.read_text(encoding="utf-8"))
+
+          if not isinstance(data, list):
+            print("ERROR: data/links.yml must be a YAML list")
+            sys.exit(1)
+
+          required = ["name","category","status"]
+          seen_ids = set()
+          dup_ids = []
+          missing = 0
+
+          for i, item in enumerate(data):
+            if not isinstance(item, dict):
+              print(f"ERROR: item #{i+1} is not a mapping/object")
+              sys.exit(1)
+
+            for k in required:
+              if not item.get(k):
+                print(f"ERROR: item #{i+1} missing required field: {k}")
+                missing += 1
+
+            _id = item.get("id")
+            if _id:
+              if _id in seen_ids:
+                dup_ids.append(_id)
+              seen_ids.add(_id)
+
+            status = str(item.get("status","")).lower()
+            if status not in ("ok","caution","omitted"):
+              print(f"ERROR: item #{i+1} has invalid status: {status}")
+              missing += 1
+
+          if dup_ids:
+            print("ERROR: duplicate ids found:", ", ".join(sorted(set(dup_ids))))
+            sys.exit(1)
+
+          if missing:
+            sys.exit(1)
+
+          print(f"OK: {len(data)} items validated")
+          PY
+
+      - name: Best-effort URL checks
+        run: |
+          python - << "PY"
+          import yaml, sys, re
+          import requests
+          from pathlib import Path
+
+          p = Path("data/links.yml")
+          data = yaml.safe_load(p.read_text(encoding="utf-8"))
+
+          url_re = re.compile(r"^https?://", re.I)
+          session = requests.Session()
+          session.headers.update({"User-Agent":"WizardWebb-LinkCheck/1.0"})
+
+          bad = 0
+          checked = 0
+
+          for item in data:
+            url = item.get("url")
+            if not url:
+              continue
+            if not url_re.match(str(url).strip()):
+              print("BAD URL (format):", item.get("name"), url)
+              bad += 1
+              continue
+
+            checked += 1
+            try:
+              # HEAD often blocked; fallback to GET
+              r = session.head(url, allow_redirects=True, timeout=10)
+              if r.status_code >= 400 or r.status_code == 405:
+                r = session.get(url, allow_redirects=True, timeout=12)
+              if r.status_code >= 400:
+                print("BAD URL (status):", item.get("name"), url, "->", r.status_code)
+                bad += 1
+            except Exception as e:
+              # Best-effort: do not fail the build on network flakiness
+              print("WARN (could not check):", item.get("name"), url, "-", str(e))
+
+          if bad:
+            print(f"URL format/status issues: {bad} (checked {checked})")
+            sys.exit(1)
+
+          print(f"OK: URL checks passed (checked {checked})")
+          PY

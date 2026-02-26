@@ -1,0 +1,35 @@
+name: "Feature Request"
+description: "Suggest an improvement or new feature"
+title: "[FEATURE] <idea>"
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        WizardWebb aims to stay lightweight and local-first. Feature ideas are welcome.
+
+  - type: textarea
+    id: idea
+    attributes:
+      label: What do you want to add?
+      placeholder: "Describe the feature and why it helps."
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives you've considered
+      placeholder: "Any simpler approach? Any existing workaround?"
+
+  - type: dropdown
+    id: scope
+    attributes:
+      label: Scope
+      options:
+        - Small UI polish
+        - Link/data improvements
+        - Optional add-on (feature flag)
+        - Bigger change (needs discussion)
+    validations:
+      required: true
