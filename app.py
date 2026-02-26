@@ -29,6 +29,7 @@ def load_links(path: str) -> List[Dict[str, Any]]:
             "tags": item.get("tags") or [],
             "status": str(item.get("status", "ok")).strip().lower(),
             "note": str(item.get("note", "")).strip(),
+            "featured": bool(item.get("featured", False)),
         })
     # Basic validation
     for it in out:
@@ -85,14 +86,6 @@ def create_app() -> Flask:
 app = create_app()
 
 if __name__ == "__main__":
-    if os.environ.get("STREAMLIT_SERVER_PORT") or os.environ.get("STREAMLIT_SERVER_HEADLESS"):
-        try:
-            import streamlit as st
-            st.set_page_config(page_title="WizardWebb")
-            st.error("This file is the Flask app. On Streamlit Cloud set the main file to streamlit_app.py.")
-            st.stop()
-        except Exception:
-            print("Streamlit detected. Set the main file to streamlit_app.py.")
-    else:
-        port = int(os.environ.get("PORT", "8000"))
-        app.run(host="0.0.0.0", port=port, debug=False, use_reloader=False)
+    port = int(os.environ.get("PORT", "8000"))
+    debug = os.environ.get("FLASK_DEBUG", "").strip() == "1"
+    app.run(host="0.0.0.0", port=port, debug=debug, use_reloader=debug)

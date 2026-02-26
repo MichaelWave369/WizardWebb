@@ -3,14 +3,16 @@ function $all(sel){ return Array.from(document.querySelectorAll(sel)); }
 
 function norm(s){ return (s || "").toLowerCase(); }
 
-function renderCards(items){
-  const grid = $("#grid");
+function renderCards(items, targetId, showEmpty=true){
+  const grid = $(`#${targetId}`);
   grid.innerHTML = "";
   if(!items.length){
-    grid.innerHTML = `<div class="notice" style="grid-column: span 12;">
-      <strong>No matches</strong>
-      <p>Try clearing filters, changing your search, or toggling “Show unlinked”.</p>
-    </div>`;
+    if(showEmpty){
+      grid.innerHTML = `<div class="notice" style="grid-column: span 12;">
+        <strong>No matches</strong>
+        <p>Try clearing filters, changing your search, or toggling “Show unlinked”.</p>
+      </div>`;
+    }
     return;
   }
   for(const it of items){
@@ -33,6 +35,7 @@ function renderCards(items){
 
     const el = document.createElement("div");
     el.className = "card";
+    if(it.featured) el.classList.add("featured");
     el.innerHTML = `
       <h3>${escapeHtml(it.name)}</h3>
       <p>${escapeHtml(it.description || "")}</p>
@@ -50,7 +53,7 @@ function renderCards(items){
     grid.appendChild(el);
   }
 
-  $all("button[data-copy]").forEach(btn => {
+  $all(`#${targetId} button[data-copy]`).forEach(btn => {
     btn.addEventListener("click", async () => {
       const text = btn.getAttribute("data-copy");
       try{
@@ -121,11 +124,14 @@ window.addEventListener("DOMContentLoaded", () => {
 
   function rerender(){
     const filtered = computeFiltered(allLinks, state);
+    const featured = filtered.filter(x => x.featured);
+    const normal = filtered.filter(x => !x.featured);
     $("#count").textContent = `${filtered.length} shown / ${allLinks.length} total`;
-    renderCards(filtered);
+    $("#featuredWrap").style.display = featured.length ? "block" : "none";
+    renderCards(featured, "featured", false);
+    renderCards(normal, "grid", featured.length === 0);
   }
 
-  // Build category chips
   const allCats = ["All", ...categories];
   chips.innerHTML = "";
   for(const c of allCats){

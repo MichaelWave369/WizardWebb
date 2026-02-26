@@ -17,6 +17,7 @@
   category: Search
   tags: [indie-web, search]
   status: ok
+  featured: true
 
 - id: marginalia
   name: Marginalia Search
@@ -25,6 +26,7 @@
   category: Search
   tags: [search, indie-web]
   status: ok
+  featured: true
 
 - id: millionshort
   name: Million Short
@@ -49,6 +51,7 @@
   category: Web Tools
   tags: [archive, history]
   status: ok
+  featured: true
 
 - id: opencorporates
   name: OpenCorporates
@@ -401,6 +404,7 @@
   category: Research
   tags: [papers, metadata, open]
   status: ok
+  featured: true
 
 - id: openaire_explore
   name: OpenAIRE Explore
@@ -633,6 +637,7 @@
   category: Security & Privacy
   tags: [privacy, guide, search]
   status: ok
+  featured: true
 
 - id: fdroid
   name: F-Droid
@@ -791,6 +796,7 @@
   category: Web Tools
   tags: [convert, decode, encode, tools]
   status: ok
+  featured: true
 
 - id: regex101
   name: regex101
