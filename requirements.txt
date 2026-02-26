@@ -1,2 +1,4 @@
 Flask>=2.3
 PyYAML>=6.0
+streamlit>=1.54.0
+gunicorn>=21.2

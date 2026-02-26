@@ -1,0 +1,108 @@
+name: "Suggest a Link (WizardWebb)"
+description: "Add a new tool/link to the WizardWebb directory"
+title: "[LINK] <tool name>"
+labels: ["link-suggestion"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        **WizardWebb Link Suggestion**
+        
+        Please suggest tools that are:
+        - Useful and generally lawful
+        - Prefer official pages/docs when possible
+        - Not designed for paywall/copyright bypass
+        
+        If a tool has mixed use (OSINT/recon/etc), we may mark it `caution` or leave it `omitted` by default.
+
+  - type: input
+    id: name
+    attributes:
+      label: Tool Name
+      placeholder: "Example: CyberChef"
+    validations:
+      required: true
+
+  - type: input
+    id: url
+    attributes:
+      label: Official URL
+      placeholder: "https://example.com"
+      description: "Prefer the official homepage or official documentation page."
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: One-line Description
+      placeholder: "What does it do and why is it useful?"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: category
+    attributes:
+      label: Category
+      options:
+        - Search
+        - Research
+        - OSINT
+        - Security & Privacy
+        - Web Tools
+        - Freebies & Deals
+        - Other
+    validations:
+      required: true
+
+  - type: input
+    id: tags
+    attributes:
+      label: Tags (comma-separated)
+      placeholder: "privacy, search, open-source"
+      description: "Short keywords to help discovery."
+
+  - type: dropdown
+    id: status
+    attributes:
+      label: Status (how it should appear)
+      options:
+        - ok
+        - caution
+        - omitted
+      description: |
+        - ok: normal link
+        - caution: legitimate, but can be misused (defensive use encouraged)
+        - omitted: included but left unlinked by default
+    validations:
+      required: true
+
+  - type: textarea
+    id: note
+    attributes:
+      label: Note (optional)
+      placeholder: "Any usage notes or safety/legal cautions?"
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Confirmation
+      options:
+        - label: "This suggestion is not primarily intended to bypass paywalls/copyright or enable illegal access."
+          required: true
+        - label: "I provided an official URL (not a random mirror) unless none exists."
+          required: true
+
+  - type: textarea
+    id: yaml
+    attributes:
+      label: YAML Entry (optional but helpful)
+      description: "If you want, provide the exact YAML snippet to paste into data/links.yml"
+      placeholder: |
+        - id: example
+          name: Example Tool
+          url: https://example.com
+          description: Short description
+          category: Web Tools
+          tags: [tag1, tag2]
+          status: ok
