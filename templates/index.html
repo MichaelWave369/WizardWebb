@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block content %}
+  <div class="hero">
+    <h2>Browse, search, and filter.</h2>
+    <p>
+      WizardWebb renders a curated list of tools with categories and tags. Items that are
+      unlinked by default are shown as such (you can add URLs yourself in <span class="code">data/links.yml</span>).
+    </p>
+  </div>
+
+  <div class="toolbar">
+    <div class="search" role="search">
+      <span style="color:var(--muted);font-size:13px;">🔎</span>
+      <input id="q" type="text" placeholder="Search (name, description, tags)..." autocomplete="off"/>
+    </div>
+    <button id="toggleUnlinked" class="btn secondary">Hide unlinked</button>
+    <button id="clear" class="btn">Clear</button>
+    <span id="count" class="smallmuted"></span>
+  </div>
+
+  <div id="chips" class="chips" aria-label="Category filters"></div>
+
+  <div id="grid" class="grid" style="margin-top:12px;"></div>
+
+  <script>
+    window.__LINKS__ = {{ links|tojson }};
+    window.__CATEGORIES__ = {{ categories|tojson }};
+  </script>
+  <script src="{{ url_for('static', filename='app.js') }}"></script>
+{% endblock %}

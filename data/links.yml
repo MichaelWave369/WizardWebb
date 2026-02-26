@@ -1,0 +1,342 @@
+# WizardWebb Links Directory
+# Add / edit items here. The UI reads this file at startup.
+#
+# Fields:
+# - name (required)
+# - url (optional)
+# - description
+# - category
+# - tags (list)
+# - status: ok | omitted | caution
+# - note: extra context shown under the description
+
+- id: wiby
+  name: Wiby
+  url: https://wiby.me
+  description: Discover personal websites buried under commercial SEO noise.
+  category: Search
+  tags: [indie-web, search]
+  status: ok
+
+- id: marginalia
+  name: Marginalia Search
+  url: https://search.marginalia.nu
+  description: Finds forgotten non-commercial content that big search engines miss.
+  category: Search
+  tags: [search, indie-web]
+  status: ok
+
+- id: millionshort
+  name: Million Short
+  url: https://millionshort.com
+  description: Filters out popular sites to help you discover the long tail of the web.
+  category: Search
+  tags: [search, discovery]
+  status: ok
+
+- id: littlesis
+  name: LittleSis
+  url: https://littlesis.org
+  description: Maps connections between politicians, donors, and organizations.
+  category: OSINT
+  tags: [relationships, power, mapping]
+  status: ok
+
+- id: wayback
+  name: Wayback Machine
+  url: https://web.archive.org
+  description: Browse and retrieve archived versions of web pages.
+  category: Web Tools
+  tags: [archive, history]
+  status: ok
+
+- id: opencorporates
+  name: OpenCorporates
+  url: https://opencorporates.com
+  description: Explore global corporate registry data and company ownership clues.
+  category: OSINT
+  tags: [companies, ownership]
+  status: ok
+
+- id: icij_offshore
+  name: ICIJ Offshore Leaks Database
+  url: https://offshoreleaks.icij.org
+  description: Search Panama/Pandora Papers-related public data sets curated by ICIJ.
+  category: OSINT
+  tags: [icij, leaks, investigations]
+  status: ok
+
+- id: shodan
+  name: Shodan
+  url: https://www.shodan.io
+  description: Search for internet-connected devices and exposed services.
+  category: Security & Privacy
+  tags: [security, scanning]
+  status: caution
+  note: Use responsibly and only for lawful security research.
+
+- id: censys
+  name: Censys
+  url: https://search.censys.io
+  description: Explore internet infrastructure, certificates, and exposed hosts.
+  category: Security & Privacy
+  tags: [security, certificates]
+  status: caution
+  note: Use responsibly and only for lawful security research.
+
+- id: publicwww
+  name: PublicWWW
+  url: https://publicwww.com
+  description: Search website source code for tech fingerprints and patterns.
+  category: Web Tools
+  tags: [source, code, search]
+  status: ok
+
+- id: dimensions
+  name: Dimensions
+  url: https://www.dimensions.ai
+  description: Connects papers, grants, patents, and clinical trials.
+  category: Research
+  tags: [papers, patents]
+  status: ok
+
+- id: lens
+  name: Lens.org
+  url: https://www.lens.org
+  description: Patent + scholarly search in one place.
+  category: Research
+  tags: [patents, papers]
+  status: ok
+
+- id: core
+  name: CORE
+  url: https://core.ac.uk
+  description: Aggregates millions of open-access research papers.
+  category: Research
+  tags: [open-access, papers]
+  status: ok
+
+- id: unpaywall
+  name: Unpaywall
+  url: https://unpaywall.org
+  description: Finds legal open-access versions of academic papers when available.
+  category: Research
+  tags: [open-access, papers]
+  status: ok
+
+- id: connectedpapers
+  name: Connected Papers
+  url: https://www.connectedpapers.com
+  description: Visual graph of related academic papers.
+  category: Research
+  tags: [graph, papers]
+  status: ok
+
+- id: semanticscholar
+  name: Semantic Scholar
+  url: https://www.semanticscholar.org
+  description: AI-assisted academic search engine.
+  category: Research
+  tags: [papers, search]
+  status: ok
+
+- id: permacc
+  name: Perma.cc
+  url: https://perma.cc
+  description: Create permanent, unbreakable links to web content.
+  category: Web Tools
+  tags: [archive, citations]
+  status: ok
+
+- id: hibp
+  name: Have I Been Pwned
+  url: https://haveibeenpwned.com
+  description: Check whether an email appears in known data breaches.
+  category: Security & Privacy
+  tags: [breach, privacy]
+  status: ok
+
+- id: intelligencex
+  name: Intelligence X
+  url: https://intelx.io
+  description: OSINT search across public sources (use ethically and lawfully).
+  category: OSINT
+  tags: [osint, search]
+  status: caution
+
+- id: exa
+  name: Exa (AI Search)
+  url: https://exa.ai
+  description: Research-oriented search aimed at finding primary sources.
+  category: Search
+  tags: [search, ai]
+  status: ok
+
+- id: photon
+  name: Photon (Web crawler)
+  url: null
+  description: Crawls websites to enumerate links/endpoints (tool name from the image).
+  category: Security & Privacy
+  tags: [crawler, recon]
+  status: caution
+  note: URL omitted by default. Add it yourself if you intend to use it for lawful testing.
+
+- id: builtwith
+  name: BuiltWith
+  url: https://builtwith.com
+  description: Identify technologies used by a website.
+  category: Web Tools
+  tags: [tech-stack, profiling]
+  status: ok
+
+- id: wappalyzer
+  name: Wappalyzer
+  url: https://www.wappalyzer.com
+  description: Detect what software a website is running.
+  category: Web Tools
+  tags: [tech-stack, profiling]
+  status: ok
+
+- id: similarweb
+  name: Similarweb
+  url: https://www.similarweb.com
+  description: Website traffic insights and audience estimates.
+  category: Web Tools
+  tags: [traffic, analytics]
+  status: ok
+
+- id: spyfu
+  name: SpyFu
+  url: https://www.spyfu.com
+  description: Competitive SEO / PPC keyword insights.
+  category: Web Tools
+  tags: [seo, ppc]
+  status: ok
+
+- id: moat
+  name: Moat
+  url: https://www.moat.com
+  description: Browse and research digital ads run by brands.
+  category: Web Tools
+  tags: [ads, marketing]
+  status: ok
+
+- id: ghostery
+  name: Ghostery
+  url: https://www.ghostery.com
+  description: Trackers and privacy tools.
+  category: Security & Privacy
+  tags: [privacy, trackers]
+  status: ok
+
+- id: browserleaks
+  name: BrowserLeaks
+  url: https://browserleaks.com
+  description: Shows what information your browser exposes.
+  category: Security & Privacy
+  tags: [privacy, fingerprinting]
+  status: ok
+
+- id: tempmail
+  name: Temp Mail
+  url: https://temp-mail.org
+  description: Disposable email addresses for avoiding spam.
+  category: Security & Privacy
+  tags: [email, privacy]
+  status: ok
+
+- id: simplelogin
+  name: SimpleLogin
+  url: https://simplelogin.io
+  description: Email aliases to protect your real address.
+  category: Security & Privacy
+  tags: [email, privacy]
+  status: ok
+
+- id: protonpass
+  name: Proton Pass
+  url: https://proton.me/pass
+  description: Encrypted password manager with email aliasing.
+  category: Security & Privacy
+  tags: [passwords, privacy]
+  status: ok
+
+- id: freecycle
+  name: Freecycle
+  url: https://www.freecycle.org
+  description: Give and receive free items locally.
+  category: Freebies & Deals
+  tags: [free, local]
+  status: ok
+
+- id: swap
+  name: Swap.com
+  url: https://www.swap.com
+  description: Buy and sell secondhand clothing.
+  category: Freebies & Deals
+  tags: [shopping, secondhand]
+  status: ok
+
+- id: metaculus
+  name: Metaculus
+  url: https://www.metaculus.com
+  description: Crowd forecasting on world events.
+  category: Other
+  tags: [forecasting, predictions]
+  status: ok
+
+# Items from the image that are commonly associated with bypassing paywalls or copyright restrictions:
+# These are included as entries, but deliberately left unlinked by default.
+- id: archive_ph
+  name: Archive.ph
+  url: null
+  description: Web page archiving service (often used for many legitimate purposes).
+  category: Web Tools
+  tags: [archive]
+  status: omitted
+  note: URL omitted by default. Add it yourself if you intend to use it for lawful purposes.
+
+- id: twelveft
+  name: 12ft.io
+  url: null
+  description: Paywall-related tool (may violate terms of service of some sites).
+  category: Web Tools
+  tags: [paywalls]
+  status: omitted
+  note: URL omitted by default.
+
+- id: annasarchive
+  name: Anna's Archive
+  url: null
+  description: Shadow library (content legality varies; may infringe copyright).
+  category: Research
+  tags: [books, papers]
+  status: omitted
+  note: URL omitted by default.
+
+- id: libgen
+  name: LibGen
+  url: null
+  description: Shadow library (content legality varies; may infringe copyright).
+  category: Research
+  tags: [books, papers]
+  status: omitted
+  note: URL omitted by default.
+
+- id: scihub
+  name: Sci-Hub
+  url: null
+  description: Shadow access to research papers (often illegal).
+  category: Research
+  tags: [papers]
+  status: omitted
+  note: URL omitted by default.
+
+- id: dehashed
+  name: DeHashed
+  url: https://dehashed.com
+  description: Search leaked credential data (can be misused; use responsibly).
+  category: Security & Privacy
+  tags: [breaches, credentials]
+  status: caution
+  note: Only use for defending your own accounts and lawful security work.

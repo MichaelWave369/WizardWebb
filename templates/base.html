@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>{{ app_name }}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}"/>
+</head>
+<body>
+  <div class="container">
+    <div class="topbar">
+      <a class="brand" href="{{ url_for('index') }}">
+        <div class="logo" aria-hidden="true"></div>
+        <div>
+          <h1>{{ app_name }}</h1>
+          <span class="sub">Noir directory of web tools • search • filter • save time</span>
+        </div>
+      </a>
+      <div class="nav">
+        <a class="pill" href="{{ url_for('index') }}">Directory</a>
+        <a class="pill" href="{{ url_for('about') }}">About</a>
+        <a class="pill" href="https://github.com/MichaelWave369" target="_blank" rel="noopener noreferrer">GitHub</a>
+      </div>
+    </div>
+
+    {% block content %}{% endblock %}
+
+    <div class="footer">
+      <div>Data source: <span class="code">{{ links_file if links_file is defined else "data/links.yml" }}</span></div>
+      <div style="margin-top:6px;">
+        Tip: edit <span class="code">data/links.yml</span> to add your own links/categories.
+      </div>
+    </div>
+  </div>
+</body>
+</html>

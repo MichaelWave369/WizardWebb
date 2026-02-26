@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block content %}
+  <div class="hero">
+    <h2>About</h2>
+    <p>
+      WizardWebb is a simple, local-first Flask app that turns a YAML file into a searchable directory page.
+      It’s meant for personal knowledge / bookmarking, and to be easy to host anywhere.
+    </p>
+  </div>
+
+  <div class="notice">
+    <strong>Responsible use</strong>
+    <p>
+      Some tools in the wider OSINT / research / security ecosystem can be misused or may be illegal in certain jurisdictions.
+      This template is designed to keep you in control and to encourage lawful, ethical use.
+      If a tool or site is associated with bypassing paywalls or copyright restrictions, the default data file leaves it unlinked.
+    </p>
+  </div>
+
+  <div class="notice">
+    <strong>How to add or change links</strong>
+    <p>
+      Open <span class="code">data/links.yml</span>, update items, then refresh the page. You can also point the app to a different file with:
+      <span class="code">LINKS_FILE=/path/to/links.yml</span>.
+    </p>
+  </div>
+{% endblock %}
