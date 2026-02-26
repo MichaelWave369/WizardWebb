@@ -70,48 +70,98 @@ jobs:
           print(f"OK: {len(data)} items validated")
           PY
 
-      - name: Best-effort URL checks
+      - name: Best-effort URL checks (fail only on broken links)
         run: |
           python - << "PY"
-          import yaml, sys, re
+          import re, sys, time
+          from urllib.parse import urlparse
+
+          import yaml
           import requests
-          from pathlib import Path
+          from requests.exceptions import RequestException
 
-          p = Path("data/links.yml")
-          data = yaml.safe_load(p.read_text(encoding="utf-8"))
+          SOFT_CODES = {401, 403, 429}      # bot blocks / auth / rate limits
+          HARD_CODES = {404, 410}           # likely truly broken
+          URL_RE = re.compile(r"^https?://", re.I)
 
-          url_re = re.compile(r"^https?://", re.I)
+          with open("data/links.yml", "r", encoding="utf-8") as f:
+            data = yaml.safe_load(f) or []
+
           session = requests.Session()
-          session.headers.update({"User-Agent":"WizardWebb-LinkCheck/1.0"})
+          # More browser-like headers helps a bit, but many sites still 403 on runners.
+          session.headers.update({
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123 Safari/537.36",
+            "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+            "Accept-Language": "en-US,en;q=0.9",
+          })
 
-          bad = 0
+          bad = []
+          warn = []
+          ok = 0
           checked = 0
+
+          def normalize(url: str) -> str:
+            return str(url).strip()
 
           for item in data:
             url = item.get("url")
+            name = item.get("name", "(unnamed)")
             if not url:
               continue
-            if not url_re.match(str(url).strip()):
-              print("BAD URL (format):", item.get("name"), url)
-              bad += 1
+
+            url = normalize(url)
+
+            # Format validation (hard fail)
+            if not URL_RE.match(url):
+              bad.append((name, url, "format"))
+              continue
+
+            # Basic parse sanity (hard fail)
+            p = urlparse(url)
+            if not p.netloc:
+              bad.append((name, url, "missing host"))
               continue
 
             checked += 1
+
+            # Try GET (HEAD is often blocked). Allow redirects.
             try:
-              # HEAD often blocked; fallback to GET
-              r = session.head(url, allow_redirects=True, timeout=10)
-              if r.status_code >= 400 or r.status_code == 405:
+              # Small retry for 429
+              for attempt in range(2):
                 r = session.get(url, allow_redirects=True, timeout=12)
-              if r.status_code >= 400:
-                print("BAD URL (status):", item.get("name"), url, "->", r.status_code)
-                bad += 1
-            except Exception as e:
-              # Best-effort: do not fail the build on network flakiness
-              print("WARN (could not check):", item.get("name"), url, "-", str(e))
+                code = r.status_code
+                if code == 429 and attempt == 0:
+                  time.sleep(2)
+                  continue
+                break
+
+              if 200 <= code < 400:
+                ok += 1
+              elif code in HARD_CODES:
+                bad.append((name, url, f"status {code}"))
+              elif code in SOFT_CODES or code >= 500:
+                warn.append((name, url, f"status {code}"))
+              else:
+                # Anything else: warn (don’t break CI for weird edge cases)
+                warn.append((name, url, f"status {code}"))
+
+            except RequestException as e:
+              # Network/DNS flakiness happens on runners; warn only.
+              warn.append((name, url, f"error {type(e).__name__}"))
+
+          print(f"Checked: {checked} | OK: {ok} | Warn: {len(warn)} | Bad: {len(bad)}")
+
+          if warn:
+            print("\nWARN (non-fatal):")
+            for n,u,why in warn[:50]:
+              print(f" - {n}: {u} -> {why}")
+            if len(warn) > 50:
+              print(f" ... and {len(warn)-50} more warnings")
 
           if bad:
-            print(f"URL format/status issues: {bad} (checked {checked})")
+            print("\nBAD (fatal):")
+            for n,u,why in bad:
+              print(f" - {n}: {u} -> {why}")
             sys.exit(1)
 
-          print(f"OK: URL checks passed (checked {checked})")
           PY
