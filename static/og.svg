@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#07080b"/>
+      <stop offset="1" stop-color="#0b0d12"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#44d9ff"/>
+      <stop offset="1" stop-color="#ffd17a"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <circle cx="960" cy="120" r="220" fill="#44d9ff" fill-opacity="0.10"/>
+  <circle cx="220" cy="560" r="280" fill="#b7ff6b" fill-opacity="0.08"/>
+  <text x="80" y="290" fill="url(#accent)" font-family="Segoe UI, Arial, sans-serif" font-size="94" font-weight="700">WizardWebb</text>
+  <text x="82" y="350" fill="#aab3c2" font-family="Segoe UI, Arial, sans-serif" font-size="38">Noir directory of web tools</text>
+</svg>

@@ -4,6 +4,14 @@
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <title>{{ app_name }}</title>
+  <meta name="description" content="Noir directory of web tools — search, filter, and save time.">
+  <meta property="og:title" content="WizardWebb">
+  <meta property="og:description" content="Noir directory of web tools — search, filter, and save time.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://wizardwebb-production.up.railway.app/">
+  <meta property="og:image" content="{{ url_for('static', filename='og.svg') }}">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" type="image/svg+xml" href="{{ url_for('static', filename='favicon.svg') }}">
   <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}"/>
 </head>
 <body>
@@ -19,7 +27,8 @@
       <div class="nav">
         <a class="pill" href="{{ url_for('index') }}">Directory</a>
         <a class="pill" href="{{ url_for('about') }}">About</a>
-        <a class="pill" href="https://github.com/MichaelWave369" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a class="pill" href="https://github.com/MichaelWave369/WizardWebb" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a class="pill" href="https://github.com/MichaelWave369/WizardWebb/issues/new/choose" target="_blank" rel="noopener noreferrer">Suggest a Link</a>
       </div>
     </div>
 
