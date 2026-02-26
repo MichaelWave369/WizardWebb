@@ -177,3 +177,21 @@ a{color:inherit}
 .notice strong{color:var(--text)}
 .notice p{margin:6px 0 0;color:var(--muted);line-height:1.5}
 .smallmuted{color:var(--muted);font-size:12px}
+
+html { --mx: 50vw; --my: 20vh; }
+
+body::after{
+  content:"";
+  position:fixed; inset:0;
+  background: radial-gradient(520px circle at var(--mx) var(--my), rgba(68,217,255,.10), transparent 60%);
+  mix-blend-mode: screen;
+  opacity:.45;
+  pointer-events:none;
+}
+
+.card{ transition: transform .12s ease, border-color .12s ease, box-shadow .12s ease; }
+.card:hover{ transform: translateY(-2px); border-color: rgba(68,217,255,.30); box-shadow: 0 22px 70px rgba(0,0,0,.40); }
+.linkbtn, .btn, .chip{ transition: transform .12s ease, border-color .12s ease, filter .12s ease; }
+.linkbtn:hover, .btn:hover, .chip:hover{ transform: translateY(-1px); }
+
+:focus-visible{ outline: 2px solid rgba(68,217,255,.55); outline-offset: 2px; border-radius: 12px; }

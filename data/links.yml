@@ -340,3 +340,708 @@
   tags: [breaches, credentials]
   status: caution
   note: Only use for defending your own accounts and lawful security work.
+
+# --- WizardWebb Additions (curated) ---
+
+# Search (privacy / indie / metasearch)
+- id: brave_search
+  name: Brave Search
+  url: https://search.brave.com/
+  description: Private search engine with its own independent index.
+  category: Search
+  tags: [search, privacy]
+  status: ok
+
+- id: duckduckgo
+  name: DuckDuckGo
+  url: https://duckduckgo.com/
+  description: Privacy-focused search with tracker protection ecosystem.
+  category: Search
+  tags: [search, privacy]
+  status: ok
+
+- id: startpage
+  name: Startpage
+  url: https://www.startpage.com/en/
+  description: Private search with features like anonymous viewing.
+  category: Search
+  tags: [search, privacy]
+  status: ok
+
+- id: mojeek
+  name: Mojeek
+  url: https://www.mojeek.com/
+  description: Independent search engine with a no-tracking policy.
+  category: Search
+  tags: [search, indie-web, privacy]
+  status: ok
+
+- id: searxng
+  name: SearXNG
+  url: https://searxng.org/
+  description: Open-source metasearch engine (self-hostable; no tracking by design).
+  category: Search
+  tags: [metasearch, open-source, self-host]
+  status: ok
+
+- id: kagi
+  name: Kagi
+  url: https://kagi.com/
+  description: Paid search engine focused on quality results and no ads.
+  category: Search
+  tags: [search, premium, no-ads]
+  status: ok
+  note: Paid service (subscription).
+
+# Research (open catalogs / papers / citations)
+- id: openalex
+  name: OpenAlex
+  url: https://openalex.org/
+  description: Open catalog of the global research system (works, authors, venues, concepts).
+  category: Research
+  tags: [papers, metadata, open]
+  status: ok
+
+- id: openaire_explore
+  name: OpenAIRE Explore
+  url: https://explore.openaire.eu/
+  description: Discovery portal built on the OpenAIRE Graph (open scholarly records).
+  category: Research
+  tags: [open-science, graph, discovery]
+  status: ok
+
+- id: doaj
+  name: DOAJ
+  url: https://doaj.org/
+  description: Directory of Open Access Journals (quality open-access indexing).
+  category: Research
+  tags: [journals, open-access]
+  status: ok
+
+- id: crossref
+  name: Crossref
+  url: https://www.crossref.org/
+  description: Open research infrastructure for DOI metadata and scholarly linking.
+  category: Research
+  tags: [doi, metadata, citations]
+  status: ok
+
+- id: zotero
+  name: Zotero
+  url: https://www.zotero.org/
+  description: Free research assistant to collect, organize, cite, and share sources.
+  category: Research
+  tags: [citations, bibliography, notes]
+  status: ok
+
+- id: zotero_bib
+  name: ZoteroBib
+  url: https://zbib.org/
+  description: Fast, free bibliography generator (no account needed).
+  category: Research
+  tags: [citations, bibliography]
+  status: ok
+
+- id: arxiv
+  name: arXiv
+  url: https://arxiv.org/
+  description: Open-access preprint archive for research papers across many fields.
+  category: Research
+  tags: [preprints, papers, open-access]
+  status: ok
+
+- id: pubmed
+  name: PubMed
+  url: https://pubmed.ncbi.nlm.nih.gov/
+  description: Biomedical literature citations and links to full text when available.
+  category: Research
+  tags: [biomed, papers, citations]
+  status: ok
+
+- id: orcid
+  name: ORCID
+  url: https://orcid.org/
+  description: Persistent researcher identifier (helps disambiguate authorship).
+  category: Research
+  tags: [identity, research, pid]
+  status: ok
+
+# OSINT & defensive investigation directories
+- id: bellingcat_toolkit
+  name: Bellingcat Online Investigations Toolkit
+  url: https://www.bellingcat.com/resources/2024/09/24/bellingcat-online-investigations-toolkit/
+  description: Curated toolkit with categories like maps, archiving, and verification.
+  category: OSINT
+  tags: [osint, verification, toolkit]
+  status: ok
+
+- id: bellingcat_toolkit_home
+  name: Bellingcat Toolkit (Home)
+  url: https://bellingcat.gitbook.io/toolkit
+  description: Toolkit home page for discovery + descriptions across investigation categories.
+  category: OSINT
+  tags: [osint, directory]
+  status: ok
+
+- id: osint_framework
+  name: OSINT Framework
+  url: https://osintframework.com/
+  description: Directory of OSINT resources (many free; some require accounts).
+  category: OSINT
+  tags: [osint, directory]
+  status: ok
+
+- id: osint_tools_list
+  name: OSINT Tools List (GitHub)
+  url: https://github.com/joe-shenouda/osint-tools
+  description: Community-maintained list of OSINT tools/resources.
+  category: OSINT
+  tags: [osint, list, github]
+  status: ok
+
+# Security & Privacy (defensive tools)
+- id: ublock_origin_repo
+  name: uBlock Origin (official repo)
+  url: https://github.com/gorhill/uBlock
+  description: Efficient content blocker for Chromium/Firefox (ads, trackers, malware domains).
+  category: Security & Privacy
+  tags: [adblock, privacy, browser]
+  status: ok
+
+- id: privacy_badger
+  name: Privacy Badger
+  url: https://privacybadger.org/
+  description: EFF browser extension to reduce third-party tracking.
+  category: Security & Privacy
+  tags: [privacy, trackers, eff]
+  status: ok
+
+- id: eff_cover_your_tracks
+  name: Cover Your Tracks
+  url: https://coveryourtracks.eff.org/
+  description: See how trackers fingerprint your browser and what you leak.
+  category: Security & Privacy
+  tags: [fingerprinting, privacy, eff]
+  status: ok
+
+- id: eff_ssd
+  name: EFF Surveillance Self-Defense
+  url: https://ssd.eff.org/
+  description: Practical guides for safer online habits and threat modeling.
+  category: Security & Privacy
+  tags: [guides, privacy, security]
+  status: ok
+
+- id: tor_download
+  name: Tor Browser (Download)
+  url: https://www.torproject.org/download/
+  description: Privacy-focused browser designed to resist tracking and surveillance.
+  category: Security & Privacy
+  tags: [privacy, browser, tor]
+  status: ok
+
+# Caution tools (legit, but can be misused)
+- id: urlscan
+  name: urlscan.io
+  url: https://urlscan.io/
+  description: Web sandbox scanner for URLs (captures requests/redirects/resources).
+  category: Security & Privacy
+  tags: [sandbox, url, analysis]
+  status: caution
+  note: Public scans can reveal what you scan—use the right visibility settings.
+
+- id: virustotal
+  name: VirusTotal
+  url: https://www.virustotal.com/
+  description: Scan files/URLs with multiple engines; useful for malware triage.
+  category: Security & Privacy
+  tags: [malware, url, scanning]
+  status: caution
+  note: Submissions may be shared with the security community—don't upload sensitive files.
+
+- id: crtsh
+  name: crt.sh
+  url: https://crt.sh/
+  description: Search certificate transparency logs (see certs issued for domains).
+  category: Security & Privacy
+  tags: [certificates, tls, ct-logs]
+  status: caution
+
+- id: maltego
+  name: Maltego
+  url: https://www.maltego.com/
+  description: Investigation platform for mapping relationships across datasets.
+  category: OSINT
+  tags: [osint, graph, investigations]
+  status: caution
+
+- id: spiderfoot
+  name: SpiderFoot
+  url: https://spiderfoot.org/
+  description: OSINT automation platform with a web UI (many data sources).
+  category: OSINT
+  tags: [osint, automation]
+  status: caution
+  note: Use for lawful, authorized investigations only.
+
+# Freebies & Deals (real-world savings)
+- id: too_good_to_go
+  name: Too Good To Go
+  url: https://www.toogoodtogo.com/en-us
+  description: Rescue surplus food from local stores/restaurants at a discount.
+  category: Freebies & Deals
+  tags: [food, discounts, waste]
+  status: ok
+
+- id: flashfood
+  name: Flashfood
+  url: https://flashfood.com/
+  description: Grocery deals on food nearing best-by dates (pickup in-store).
+  category: Freebies & Deals
+  tags: [food, grocery, discounts]
+  status: ok
+
+- id: olio
+  name: OLIO
+  url: https://olioapp.com/en/
+  description: Local sharing app for free food and items (reduce waste, save money).
+  category: Freebies & Deals
+  tags: [free, local, sharing]
+  status: ok
+
+- id: slickdeals
+  name: Slickdeals
+  url: https://slickdeals.net/
+  description: Community-vetted deals, coupons, promo codes, and freebies.
+  category: Freebies & Deals
+  tags: [coupons, deals, freebies]
+  status: ok
+
+- id: rakuten
+  name: Rakuten
+  url: https://www.rakuten.com/
+  description: Cash back + coupons at many online stores.
+  category: Freebies & Deals
+  tags: [cashback, coupons]
+  status: ok
+
+# Privacy community recommendations
+- id: privacyguides_search
+  name: Privacy Guides (Search Engines)
+  url: https://www.privacyguides.org/en/search-engines/
+  description: Guide to private search engine options and tradeoffs.
+  category: Security & Privacy
+  tags: [privacy, guide, search]
+  status: ok
+
+- id: fdroid
+  name: F-Droid
+  url: https://f-droid.org/en/
+  description: Free and open-source Android app repository (privacy-friendly).
+  category: Security & Privacy
+  tags: [android, foss, apps]
+  status: ok
+
+# --- WizardWebb Noir Pack #2 (maps • archives • open data • dev utilities) ---
+
+# Maps / Geo / Visual intel
+- id: openstreetmap
+  name: OpenStreetMap
+  url: https://www.openstreetmap.org/
+  description: Open world map you can explore, edit, and use as a base layer.
+  category: Web Tools
+  tags: [maps, geo, open-data]
+  status: ok
+
+- id: overpass_turbo
+  name: Overpass Turbo
+  url: https://overpass-turbo.eu/
+  description: Query/filter OpenStreetMap data and visualize results on a map.
+  category: Web Tools
+  tags: [maps, geo, openstreetmap, query]
+  status: ok
+
+- id: nominatim_docs
+  name: Nominatim (OSM Geocoding Docs)
+  url: https://nominatim.org/
+  description: Open-source geocoding and reverse-geocoding using OpenStreetMap data.
+  category: Web Tools
+  tags: [maps, geocoding, api, openstreetmap]
+  status: ok
+
+- id: geojson_io
+  name: geojson.io
+  url: https://geojson.io/
+  description: Quick map editor/viewer for GeoJSON (draw, import, export).
+  category: Web Tools
+  tags: [maps, geojson, editor]
+  status: ok
+
+- id: mapshaper
+  name: Mapshaper
+  url: https://mapshaper.org/
+  description: Clean/simplify/convert shapefiles and GeoJSON in your browser.
+  category: Web Tools
+  tags: [maps, gis, convert]
+  status: ok
+
+- id: google_earth
+  name: Google Earth (Web)
+  url: https://earth.google.com/web/
+  description: Explore satellite imagery and 3D terrain in the browser.
+  category: Web Tools
+  tags: [maps, satellite, 3d]
+  status: ok
+
+# Archives / Link-rot armor
+- id: internet_archive
+  name: Internet Archive
+  url: https://archive.org/
+  description: Library of archived sites, books, audio, video, and software.
+  category: Web Tools
+  tags: [archive, library]
+  status: ok
+
+- id: memento_timetravel
+  name: Memento Time Travel
+  url: https://timetravel.mementoweb.org/
+  description: Check many web archives at once for snapshots of a URL.
+  category: Web Tools
+  tags: [archive, snapshots, history]
+  status: ok
+
+- id: openlibrary
+  name: Open Library
+  url: https://openlibrary.org/
+  description: Open catalog of books (borrow where available).
+  category: Research
+  tags: [books, library, catalog]
+  status: ok
+
+# Open data / world facts
+- id: wikidata
+  name: Wikidata
+  url: https://www.wikidata.org/
+  description: Community knowledge base; structured data behind many projects.
+  category: Research
+  tags: [open-data, knowledge-graph]
+  status: ok
+
+- id: wikidata_query
+  name: Wikidata Query Service
+  url: https://query.wikidata.org/
+  description: Run SPARQL queries over Wikidata and export results.
+  category: Research
+  tags: [sparql, knowledge-graph, open-data]
+  status: ok
+
+- id: data_gov
+  name: Data.gov
+  url: https://data.gov/
+  description: US government open data portal (datasets, APIs, resources).
+  category: Research
+  tags: [open-data, government]
+  status: ok
+
+- id: eu_open_data
+  name: EU Open Data Portal
+  url: https://data.europa.eu/en
+  description: European open data portal with datasets and catalogs.
+  category: Research
+  tags: [open-data, government, europe]
+  status: ok
+
+- id: world_bank_data
+  name: World Bank Data
+  url: https://data.worldbank.org/
+  description: Global development indicators and downloadable datasets.
+  category: Research
+  tags: [economics, indicators, datasets]
+  status: ok
+
+- id: our_world_in_data
+  name: Our World in Data
+  url: https://ourworldindata.org/
+  description: Data-driven charts and research on global topics.
+  category: Research
+  tags: [charts, datasets, public-health]
+  status: ok
+
+- id: gdelt
+  name: GDELT
+  url: https://www.gdeltproject.org/
+  description: Global news/events data with search and analysis tools.
+  category: Research
+  tags: [news, datasets, analysis]
+  status: ok
+
+- id: common_crawl
+  name: Common Crawl
+  url: https://commoncrawl.org/
+  description: Open web crawl datasets for research and analysis.
+  category: Research
+  tags: [web, datasets, crawl]
+  status: ok
+
+# Dev / format / utility belt
+- id: cyberchef
+  name: CyberChef
+  url: https://gchq.github.io/CyberChef/
+  description: Encode/decode, parse, convert, and analyze data in-browser.
+  category: Web Tools
+  tags: [convert, decode, encode, tools]
+  status: ok
+
+- id: regex101
+  name: regex101
+  url: https://regex101.com/
+  description: Build/test regex with explanations and match highlighting.
+  category: Web Tools
+  tags: [regex, dev]
+  status: ok
+
+- id: jsonlint
+  name: JSONLint
+  url: https://jsonlint.com/
+  description: Validate and format JSON.
+  category: Web Tools
+  tags: [json, formatter, dev]
+  status: ok
+
+- id: base64_guru
+  name: Base64.guru
+  url: https://base64.guru/
+  description: Base64 tools + guides (encode/decode and related utilities).
+  category: Web Tools
+  tags: [base64, convert]
+  status: ok
+
+- id: diffchecker
+  name: Diffchecker
+  url: https://www.diffchecker.com/
+  description: Compare text/files quickly (useful for configs and edits).
+  category: Web Tools
+  tags: [diff, compare, dev]
+  status: ok
+
+- id: crontab_guru
+  name: crontab.guru
+  url: https://crontab.guru/
+  description: Cron schedule helper (at 2am every Sunday, etc.).
+  category: Web Tools
+  tags: [cron, devops]
+  status: ok
+
+- id: caniuse
+  name: Can I use
+  url: https://caniuse.com/
+  description: Browser support tables for web features.
+  category: Web Tools
+  tags: [webdev, compatibility]
+  status: ok
+
+- id: mermaid_live
+  name: Mermaid Live Editor
+  url: https://mermaid.live/
+  description: Make diagrams from text (flowcharts, sequence diagrams, etc.).
+  category: Web Tools
+  tags: [diagrams, docs]
+  status: ok
+
+- id: excalidraw
+  name: Excalidraw
+  url: https://excalidraw.com/
+  description: Sketchy whiteboard for fast diagrams and UI flows.
+  category: Web Tools
+  tags: [whiteboard, diagrams]
+  status: ok
+
+# Safety / privacy quick hits
+- id: twofa_directory
+  name: 2FA Directory
+  url: https://2fa.directory/
+  description: Which services support 2FA / MFA (and how).
+  category: Security & Privacy
+  tags: [2fa, mfa, security]
+  status: ok
+
+# urlscan already exists earlier in the file; keeping this pack additive without duplicating IDs.
+
+# Freebies / help finders (clean + legit)
+- id: findhelp
+  name: Findhelp
+  url: https://www.findhelp.org/
+  description: Find free or reduced-cost services by ZIP code (food, housing, etc.).
+  category: Freebies & Deals
+  tags: [help, resources, local]
+  status: ok
+
+- id: "211"
+  name: 211 (United Way)
+  url: https://www.211.org/
+  description: Local assistance directory (food, shelter, utilities, support).
+  category: Freebies & Deals
+  tags: [help, resources, local]
+  status: ok
+
+# --- WizardWebb Pack #3 (Creator/Dev Noir) ---
+
+- id: iconify
+  name: Iconify
+  url: https://iconify.design/
+  description: Browse and use huge collections of open-source icons (searchable).
+  category: Web Tools
+  tags: [icons, design, svg]
+  status: ok
+
+- id: lucide_icons
+  name: Lucide Icons
+  url: https://lucide.dev/icons/
+  description: Clean, consistent open-source SVG icon set.
+  category: Web Tools
+  tags: [icons, svg, ui]
+  status: ok
+
+- id: heroicons
+  name: Heroicons
+  url: https://heroicons.com/
+  description: Beautiful MIT-licensed SVG UI icons (Tailwind Labs).
+  category: Web Tools
+  tags: [icons, svg, ui]
+  status: ok
+
+- id: simple_icons
+  name: Simple Icons
+  url: https://simpleicons.org/
+  description: Brand icons as SVGs (great for README badges and UI).
+  category: Web Tools
+  tags: [icons, brands, svg]
+  status: ok
+
+- id: google_fonts
+  name: Google Fonts
+  url: https://fonts.google.com/
+  description: Free/open fonts for web projects with easy embed code.
+  category: Web Tools
+  tags: [fonts, typography, design]
+  status: ok
+
+- id: coolors
+  name: Coolors
+  url: https://coolors.co/
+  description: Super-fast color palette generator + contrast tools.
+  category: Web Tools
+  tags: [colors, palette, design]
+  status: ok
+
+- id: openverse
+  name: Openverse
+  url: https://openverse.org/
+  description: Search openly licensed images/audio (creative commons + public domain).
+  category: Research
+  tags: [media, creative-commons, search]
+  status: ok
+
+- id: unsplash
+  name: Unsplash
+  url: https://unsplash.com/
+  description: High-quality free images for projects (check license terms).
+  category: Web Tools
+  tags: [images, design, media]
+  status: ok
+
+- id: squoosh
+  name: Squoosh
+  url: https://squoosh.app/
+  description: In-browser image compressor/optimizer (many codecs).
+  category: Web Tools
+  tags: [images, compression, performance]
+  status: ok
+
+- id: svgomg
+  name: SVGOMG
+  url: https://jakearchibald.github.io/svgomg/
+  description: Visual SVG optimizer (SVGO GUI) for smaller, cleaner SVGs.
+  category: Web Tools
+  tags: [svg, optimize, performance]
+  status: ok
+
+- id: favicon_io
+  name: Favicon.io
+  url: https://favicon.io/
+  description: Generate favicons from text, images, or emoji.
+  category: Web Tools
+  tags: [favicon, branding, webdev]
+  status: ok
+
+- id: real_favicon_generator
+  name: RealFaviconGenerator
+  url: https://realfavicongenerator.net/
+  description: Generate platform-perfect favicons + HTML snippets.
+  category: Web Tools
+  tags: [favicon, branding, webdev]
+  status: ok
+
+- id: pagespeed_insights
+  name: PageSpeed Insights
+  url: https://pagespeed.web.dev/
+  description: Performance report for any URL with actionable fixes.
+  category: Web Tools
+  tags: [performance, lighthouse, webdev]
+  status: ok
+
+- id: bundlephobia
+  name: Bundlephobia
+  url: https://bundlephobia.com/
+  description: Check npm package size impact before you install.
+  category: Web Tools
+  tags: [webdev, javascript, performance]
+  status: ok
+
+- id: hoppscotch
+  name: Hoppscotch
+  url: https://hoppscotch.io/
+  description: Lightweight open-source API client (Postman-style in the browser).
+  category: Web Tools
+  tags: [api, requests, devtools]
+  status: ok
+
+- id: transform_tools
+  name: Transform Tools
+  url: https://transform.tools/
+  description: Handy converters for code/data (JSON↔YAML, HTML→JSX, etc.).
+  category: Web Tools
+  tags: [convert, devtools, productivity]
+  status: ok
+
+- id: carbon
+  name: Carbon
+  url: https://carbon.now.sh/
+  description: Create beautiful images of code for docs/social posts.
+  category: Web Tools
+  tags: [code, screenshots, docs]
+  status: ok
+
+- id: ray_so
+  name: Ray.so
+  url: https://www.ray.so/
+  description: Another great code-to-image tool (quick and clean).
+  category: Web Tools
+  tags: [code, screenshots, docs]
+  status: ok
+
+- id: asciinema
+  name: asciinema
+  url: https://asciinema.org/
+  description: Record and share terminal sessions as lightweight text replays.
+  category: Web Tools
+  tags: [terminal, recording, docs]
+  status: ok
+
+- id: gitignore_io
+  name: gitignore.io
+  url: https://www.toptal.com/developers/gitignore
+  description: Generate .gitignore files for OS/IDE/languages fast.
+  category: Web Tools
+  tags: [git, templates, devtools]
+  status: ok
