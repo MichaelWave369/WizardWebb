@@ -1051,3 +1051,485 @@
   category: Web Tools
   tags: [git, templates, devtools]
   status: ok
+
+# --- WizardWebb Additions from shared images (verified + curated) ---
+
+# Search / discovery / monitoring
+- id: same_energy
+  name: Same Energy
+  url: https://same.energy/
+  description: Visual image search and mood-board style discovery.
+  category: Search
+  tags: [search, images, visual]
+  status: ok
+
+- id: tineye
+  name: TinEye
+  url: https://tineye.com/
+  description: Reverse image search engine for finding where images appear online.
+  category: Search
+  tags: [search, images, reverse-image]
+  status: ok
+
+- id: sentinel_hub
+  name: Sentinel Hub
+  url: https://www.sentinel-hub.com/
+  description: Satellite imagery platform for Earth observation and geospatial analysis.
+  category: Research
+  tags: [satellite, maps, geospatial]
+  status: ok
+
+- id: zoom_earth
+  name: Zoom Earth
+  url: https://zoom.earth/
+  description: Live global weather and satellite map viewer.
+  category: Web Tools
+  tags: [weather, satellite, maps]
+  status: ok
+
+- id: marinetraffic
+  name: MarineTraffic
+  url: https://www.marinetraffic.com/
+  description: Vessel tracking and maritime intelligence platform.
+  category: Web Tools
+  tags: [ships, maps, tracking]
+  status: ok
+
+- id: flightaware
+  name: FlightAware
+  url: https://www.flightaware.com/
+  description: Real-time flight tracking and aviation data.
+  category: Web Tools
+  tags: [aviation, flights, tracking]
+  status: ok
+
+- id: n2yo
+  name: N2YO
+  url: https://www.n2yo.com/
+  description: Real-time satellite tracking with orbital details.
+  category: Web Tools
+  tags: [satellites, space, tracking]
+  status: ok
+
+- id: spacereference
+  name: Space-Track / Space Reference
+  url: https://www.space-track.org/
+  description: Public orbital and object-tracking records for space situational awareness.
+  category: Research
+  tags: [space, satellites, tracking]
+  status: caution
+  note: Registration may be required for full access.
+
+- id: ncbi_gene
+  name: NCBI Gene
+  url: https://www.ncbi.nlm.nih.gov/gene/
+  description: NCBI gene-centered records across many organisms.
+  category: Research
+  tags: [biology, genes, database]
+  status: ok
+
+- id: uniprot
+  name: UniProt
+  url: https://www.uniprot.org/
+  description: Comprehensive protein sequence and functional information.
+  category: Research
+  tags: [biology, proteins, database]
+  status: ok
+
+- id: chemspider
+  name: ChemSpider
+  url: https://www.chemspider.com/
+  description: Chemical structure database with integrated references.
+  category: Research
+  tags: [chemistry, compounds, database]
+  status: ok
+
+- id: pubchem
+  name: PubChem
+  url: https://pubchem.ncbi.nlm.nih.gov/
+  description: Public chemistry database for compounds, substances, and bioassays.
+  category: Research
+  tags: [chemistry, compounds, bioassay]
+  status: ok
+
+- id: gtopdb
+  name: Guide to Pharmacology (GtoPdb)
+  url: https://www.guidetopharmacology.org/
+  description: Curated pharmacological targets and ligand interactions.
+  category: Research
+  tags: [pharmacology, compounds, targets]
+  status: ok
+
+- id: clinicaltrials_gov
+  name: ClinicalTrials.gov
+  url: https://clinicaltrials.gov/
+  description: Registry and results database of clinical studies.
+  category: Research
+  tags: [clinical, medicine, trials]
+  status: ok
+
+- id: courtlistener
+  name: CourtListener
+  url: https://www.courtlistener.com/
+  description: Searchable legal opinions, dockets, and RECAP records.
+  category: Research
+  tags: [law, courts, records]
+  status: ok
+
+- id: pacer
+  name: PACER
+  url: https://pacer.uscourts.gov/
+  description: Official US federal court records service.
+  category: Research
+  tags: [law, courts, federal]
+  status: caution
+  note: Fees may apply depending on usage.
+
+- id: judyrecords
+  name: JudyRecords
+  url: https://www.judyrecords.com/
+  description: Search interface for US court records.
+  category: Research
+  tags: [law, courts, search]
+  status: ok
+
+- id: opensanctions
+  name: OpenSanctions
+  url: https://www.opensanctions.org/
+  description: Open database of sanctions, PEP, and watchlist data.
+  category: Research
+  tags: [sanctions, compliance, watchlists]
+  status: ok
+
+- id: aleph_occrp
+  name: OCCRP Aleph
+  url: https://aleph.occrp.org/
+  description: Investigative data platform for public records and leaked datasets.
+  category: OSINT
+  tags: [investigations, documents, records]
+  status: caution
+  note: Use lawfully and ethically; some collections may be sensitive.
+
+- id: global_fishing_watch
+  name: Global Fishing Watch
+  url: https://globalfishingwatch.org/
+  description: Open map and analytics for global fishing activity.
+  category: Research
+  tags: [maps, environment, maritime]
+  status: ok
+
+- id: global_forest_watch
+  name: Global Forest Watch
+  url: https://www.globalforestwatch.org/
+  description: Forest change and deforestation monitoring platform.
+  category: Research
+  tags: [environment, maps, forests]
+  status: ok
+
+- id: earthdata_nasa
+  name: NASA Earthdata
+  url: https://www.earthdata.nasa.gov/
+  description: NASA Earth science data, tools, and APIs.
+  category: Research
+  tags: [nasa, datasets, earth-science]
+  status: ok
+
+- id: usgs_earthexplorer
+  name: USGS EarthExplorer
+  url: https://earthexplorer.usgs.gov/
+  description: Access to remote sensing and geospatial datasets.
+  category: Research
+  tags: [usgs, satellite, geospatial]
+  status: ok
+
+- id: radioreference
+  name: RadioReference
+  url: https://www.radioreference.com/
+  description: Community reference database for radio systems and frequencies.
+  category: Web Tools
+  tags: [radio, communications, reference]
+  status: ok
+
+- id: broadcastify
+  name: Broadcastify
+  url: https://www.broadcastify.com/
+  description: Live and archived public safety radio streams.
+  category: Web Tools
+  tags: [radio, audio, public-safety]
+  status: caution
+  note: Respect local laws and platform terms for monitoring communications.
+
+- id: greynoise
+  name: GreyNoise
+  url: https://www.greynoise.io/
+  description: Internet noise intelligence to help triage scanners and attack traffic.
+  category: Security & Privacy
+  tags: [threat-intel, security, network]
+  status: ok
+
+- id: netlas
+  name: Netlas
+  url: https://netlas.io/
+  description: Search engine for internet-facing hosts, certificates, and assets.
+  category: Security & Privacy
+  tags: [assets, certificates, recon]
+  status: caution
+  note: Use for authorized defensive security workflows only.
+
+- id: wolfram_alpha
+  name: Wolfram Alpha
+  url: https://www.wolframalpha.com/
+  description: Computational knowledge engine for math, science, and facts.
+  category: Search
+  tags: [knowledge, computation, search]
+  status: ok
+
+- id: ahmia
+  name: Ahmia
+  url: https://ahmia.fi/
+  description: Search engine for publicly indexed Tor onion sites.
+  category: Search
+  tags: [tor, search, privacy]
+  status: caution
+  note: Exercise caution when opening unknown onion links.
+
+# Privacy / creator / civic resources from shared list
+- id: jimpl
+  name: Jimpl
+  url: https://jimpl.com/
+  description: Online metadata viewer for images and files.
+  category: Security & Privacy
+  tags: [metadata, exif, privacy]
+  status: ok
+
+- id: have_i_been_trained
+  name: Have I Been Trained?
+  url: https://haveibeentrained.com/
+  description: Check whether images may appear in large AI training datasets.
+  category: Research
+  tags: [ai, datasets, images]
+  status: ok
+
+- id: privacy_com
+  name: Privacy.com
+  url: https://privacy.com/
+  description: Virtual payment cards for safer online purchases.
+  category: Security & Privacy
+  tags: [payments, privacy, cards]
+  status: ok
+
+- id: hat_sh
+  name: Hat.sh
+  url: https://hat.sh/
+  description: Browser-based file encryption/decryption tool.
+  category: Security & Privacy
+  tags: [encryption, files, browser]
+  status: ok
+
+- id: stegcloak
+  name: StegCloak
+  url: https://stegcloak.surge.sh/
+  description: Hide encrypted messages in plain text using steganographic techniques.
+  category: Security & Privacy
+  tags: [steganography, encryption, privacy]
+  status: caution
+
+- id: picocrypt
+  name: Picocrypt
+  url: https://github.com/Picocrypt/Picocrypt
+  description: Open-source file encryption utility.
+  category: Security & Privacy
+  tags: [encryption, files, open-source]
+  status: ok
+
+- id: grapheneos
+  name: GrapheneOS
+  url: https://grapheneos.org/
+  description: Security and privacy-focused Android OS.
+  category: Security & Privacy
+  tags: [android, privacy, security]
+  status: ok
+
+- id: librewolf
+  name: LibreWolf
+  url: https://librewolf.net/
+  description: Privacy-hardened Firefox fork with anti-tracking defaults.
+  category: Security & Privacy
+  tags: [browser, privacy, firefox]
+  status: ok
+
+- id: tails_os
+  name: Tails OS
+  url: https://tails.net/
+  description: Portable OS focused on privacy and anonymity.
+  category: Security & Privacy
+  tags: [os, privacy, anonymity]
+  status: ok
+
+- id: mullvad_browser
+  name: Mullvad Browser
+  url: https://mullvad.net/en/browser
+  description: Privacy-focused browser designed to reduce fingerprinting.
+  category: Security & Privacy
+  tags: [browser, fingerprinting, privacy]
+  status: ok
+
+- id: i2p
+  name: I2P
+  url: https://geti2p.net/
+  description: Anonymous overlay network for privacy-preserving communication.
+  category: Security & Privacy
+  tags: [network, anonymity, privacy]
+  status: caution
+
+- id: onionshare
+  name: OnionShare
+  url: https://onionshare.org/
+  description: Open-source anonymous file sharing over Tor.
+  category: Security & Privacy
+  tags: [sharing, tor, privacy]
+  status: caution
+
+- id: briar
+  name: Briar
+  url: https://briarproject.org/
+  description: Peer-to-peer secure messaging app with resilient transport options.
+  category: Security & Privacy
+  tags: [messaging, p2p, privacy]
+  status: ok
+
+- id: session_messenger
+  name: Session
+  url: https://getsession.org/
+  description: Decentralized private messenger with minimal metadata.
+  category: Security & Privacy
+  tags: [messaging, privacy, decentralization]
+  status: ok
+
+- id: tutanota
+  name: Tuta Mail
+  url: https://tuta.com/
+  description: End-to-end encrypted email service.
+  category: Security & Privacy
+  tags: [email, encryption, privacy]
+  status: ok
+
+- id: riseup
+  name: Riseup
+  url: https://riseup.net/
+  description: Collective providing privacy-oriented communication tools.
+  category: Security & Privacy
+  tags: [email, vpn, activism]
+  status: ok
+
+- id: securedrop
+  name: SecureDrop
+  url: https://securedrop.org/
+  description: Open-source whistleblower submission platform used by newsrooms.
+  category: Security & Privacy
+  tags: [journalism, anonymity, submissions]
+  status: caution
+
+- id: propublica
+  name: ProPublica
+  url: https://www.propublica.org/
+  description: Nonprofit investigative journalism organization.
+  category: Research
+  tags: [journalism, investigations, public-interest]
+  status: ok
+
+- id: datawrapper
+  name: Datawrapper
+  url: https://www.datawrapper.de/
+  description: Create professional charts and maps without coding.
+  category: Web Tools
+  tags: [charts, visualization, data]
+  status: ok
+
+- id: worldcat
+  name: WorldCat
+  url: https://search.worldcat.org/
+  description: Global library catalog for books and other media.
+  category: Research
+  tags: [library, books, catalog]
+  status: ok
+
+- id: opensyllabus
+  name: Open Syllabus
+  url: https://opensyllabus.org/
+  description: Explore books and works commonly assigned in university courses.
+  category: Research
+  tags: [education, books, academia]
+  status: ok
+
+- id: global_voices
+  name: Global Voices
+  url: https://globalvoices.org/
+  description: International community journalism and translation project.
+  category: Research
+  tags: [journalism, global, media]
+  status: ok
+
+- id: the_intercept
+  name: The Intercept
+  url: https://theintercept.com/
+  description: Investigative reporting and analysis on policy, technology, and civil liberties.
+  category: Research
+  tags: [journalism, investigations, civil-liberties]
+  status: ok
+
+- id: muckrock
+  name: MuckRock
+  url: https://www.muckrock.com/
+  description: Platform for filing and publishing FOIA/public records requests.
+  category: Research
+  tags: [foia, records, journalism]
+  status: ok
+
+- id: documentcloud
+  name: DocumentCloud
+  url: https://www.documentcloud.org/
+  description: Analyze, annotate, and publish primary-source documents.
+  category: Research
+  tags: [documents, journalism, analysis]
+  status: ok
+
+- id: deviceinfo_me
+  name: Device Info
+  url: https://www.deviceinfo.me/
+  description: Browser and device fingerprint diagnostics.
+  category: Security & Privacy
+  tags: [fingerprinting, diagnostics, privacy]
+  status: caution
+
+- id: optoutprescreen
+  name: OptOutPrescreen
+  url: https://www.optoutprescreen.com/
+  description: Official US opt-out service for prescreened credit and insurance offers.
+  category: Security & Privacy
+  tags: [privacy, opt-out, identity]
+  status: ok
+
+- id: incogni
+  name: Incogni
+  url: https://incogni.com/
+  description: Data broker removal service.
+  category: Security & Privacy
+  tags: [privacy, data-brokers, removal]
+  status: ok
+
+- id: cloaked
+  name: Cloaked
+  url: https://www.cloaked.com/
+  description: Identity privacy tool with masked emails/phones/cards.
+  category: Security & Privacy
+  tags: [identity, privacy, masking]
+  status: ok
+
+- id: justdeleteme
+  name: JustDeleteMe
+  url: https://justdeleteme.xyz/
+  description: Directory showing account deletion links and difficulty by service.
+  category: Security & Privacy
+  tags: [privacy, account-deletion, directory]
+  status: ok
