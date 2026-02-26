@@ -883,3 +883,165 @@
   category: Freebies & Deals
   tags: [help, resources, local]
   status: ok
+
+# --- WizardWebb Pack #3 (Creator/Dev Noir) ---
+
+- id: iconify
+  name: Iconify
+  url: https://iconify.design/
+  description: Browse and use huge collections of open-source icons (searchable).
+  category: Web Tools
+  tags: [icons, design, svg]
+  status: ok
+
+- id: lucide_icons
+  name: Lucide Icons
+  url: https://lucide.dev/icons/
+  description: Clean, consistent open-source SVG icon set.
+  category: Web Tools
+  tags: [icons, svg, ui]
+  status: ok
+
+- id: heroicons
+  name: Heroicons
+  url: https://heroicons.com/
+  description: Beautiful MIT-licensed SVG UI icons (Tailwind Labs).
+  category: Web Tools
+  tags: [icons, svg, ui]
+  status: ok
+
+- id: simple_icons
+  name: Simple Icons
+  url: https://simpleicons.org/
+  description: Brand icons as SVGs (great for README badges and UI).
+  category: Web Tools
+  tags: [icons, brands, svg]
+  status: ok
+
+- id: google_fonts
+  name: Google Fonts
+  url: https://fonts.google.com/
+  description: Free/open fonts for web projects with easy embed code.
+  category: Web Tools
+  tags: [fonts, typography, design]
+  status: ok
+
+- id: coolors
+  name: Coolors
+  url: https://coolors.co/
+  description: Super-fast color palette generator + contrast tools.
+  category: Web Tools
+  tags: [colors, palette, design]
+  status: ok
+
+- id: openverse
+  name: Openverse
+  url: https://openverse.org/
+  description: Search openly licensed images/audio (creative commons + public domain).
+  category: Research
+  tags: [media, creative-commons, search]
+  status: ok
+
+- id: unsplash
+  name: Unsplash
+  url: https://unsplash.com/
+  description: High-quality free images for projects (check license terms).
+  category: Web Tools
+  tags: [images, design, media]
+  status: ok
+
+- id: squoosh
+  name: Squoosh
+  url: https://squoosh.app/
+  description: In-browser image compressor/optimizer (many codecs).
+  category: Web Tools
+  tags: [images, compression, performance]
+  status: ok
+
+- id: svgomg
+  name: SVGOMG
+  url: https://jakearchibald.github.io/svgomg/
+  description: Visual SVG optimizer (SVGO GUI) for smaller, cleaner SVGs.
+  category: Web Tools
+  tags: [svg, optimize, performance]
+  status: ok
+
+- id: favicon_io
+  name: Favicon.io
+  url: https://favicon.io/
+  description: Generate favicons from text, images, or emoji.
+  category: Web Tools
+  tags: [favicon, branding, webdev]
+  status: ok
+
+- id: real_favicon_generator
+  name: RealFaviconGenerator
+  url: https://realfavicongenerator.net/
+  description: Generate platform-perfect favicons + HTML snippets.
+  category: Web Tools
+  tags: [favicon, branding, webdev]
+  status: ok
+
+- id: pagespeed_insights
+  name: PageSpeed Insights
+  url: https://pagespeed.web.dev/
+  description: Performance report for any URL with actionable fixes.
+  category: Web Tools
+  tags: [performance, lighthouse, webdev]
+  status: ok
+
+- id: bundlephobia
+  name: Bundlephobia
+  url: https://bundlephobia.com/
+  description: Check npm package size impact before you install.
+  category: Web Tools
+  tags: [webdev, javascript, performance]
+  status: ok
+
+- id: hoppscotch
+  name: Hoppscotch
+  url: https://hoppscotch.io/
+  description: Lightweight open-source API client (Postman-style in the browser).
+  category: Web Tools
+  tags: [api, requests, devtools]
+  status: ok
+
+- id: transform_tools
+  name: Transform Tools
+  url: https://transform.tools/
+  description: Handy converters for code/data (JSON↔YAML, HTML→JSX, etc.).
+  category: Web Tools
+  tags: [convert, devtools, productivity]
+  status: ok
+
+- id: carbon
+  name: Carbon
+  url: https://carbon.now.sh/
+  description: Create beautiful images of code for docs/social posts.
+  category: Web Tools
+  tags: [code, screenshots, docs]
+  status: ok
+
+- id: ray_so
+  name: Ray.so
+  url: https://www.ray.so/
+  description: Another great code-to-image tool (quick and clean).
+  category: Web Tools
+  tags: [code, screenshots, docs]
+  status: ok
+
+- id: asciinema
+  name: asciinema
+  url: https://asciinema.org/
+  description: Record and share terminal sessions as lightweight text replays.
+  category: Web Tools
+  tags: [terminal, recording, docs]
+  status: ok
+
+- id: gitignore_io
+  name: gitignore.io
+  url: https://www.toptal.com/developers/gitignore
+  description: Generate .gitignore files for OS/IDE/languages fast.
+  category: Web Tools
+  tags: [git, templates, devtools]
+  status: ok
